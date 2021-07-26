@@ -2,6 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from tinydb import TinyDB, Query
+db = TinyDB('db.json')
 
 
 def main():
