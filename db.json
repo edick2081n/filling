@@ -1,0 +1,23 @@
+{
+
+form1 = {name": "Form template name",
+"field_name_1": "email",
+"field_name_2": "phone"},
+
+form2 = {"name": "Form template name",
+"field_name_1": "email",
+"field_name_2": "phone",
+"field_name_3": "",
+"field_name_4": "phone"},
+
+form3 = {
+"field_name_1": "email",
+"field_name_2": "phone"
+},
+
+form4 = {
+"name": "Form template name",
+"field_name_1": "email",
+"field_name_2": "phone"
+}
+}
