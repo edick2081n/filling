@@ -1,23 +1,35 @@
-{
-
-form1 = {name": "Form template name",
-"field_name_1": "email",
-"field_name_2": "phone"},
-
-form2 = {"name": "Form template name",
-"field_name_1": "email",
-"field_name_2": "phone",
-"field_name_3": "",
-"field_name_4": "phone"},
-
-form3 = {
-"field_name_1": "email",
-"field_name_2": "phone"
-},
-
-form4 = {
-"name": "Form template name",
-"field_name_1": "email",
-"field_name_2": "phone"
-}
-}
+[
+   {
+    "name": "Form template name 1",
+    "field_name_1": "phone",
+    "field_name_2": "date"
+  },
+   {
+    "name": "Form template name 2",
+    "field_name_1": "email",
+    "field_name_2": "phone",
+    "field_name_3": "date",
+    "field_name_4": "description"
+  },
+   {
+    "name": "Form template name 3",
+    "field_name_1": "email",
+    "field_name_42": "phone"
+  },
+  {
+    "name": "Form template name 4",
+    "field_name_1": "email",
+    "field_name_2": "date"
+  },
+  {
+    "name": "Form template name 5",
+    "field_name_1": "email",
+    "field_name_2": "phone"
+  },
+  {
+    "name": "Form template name 6",
+    "field_name_1": "phone",
+    "field_name_2": "date",
+    "field_name_21": "email"
+  }
+]

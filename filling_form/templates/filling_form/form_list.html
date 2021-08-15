@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ФОРМА</title>
+</head>
+<body>
+    <h1>ФОРМА ЗАЯВКИ</h1>
+
+
+    <h2>ЗАЯВКА</h2>
+            <form action="/get_form" method="post">
+                {% if sended %} Спасибо! Ваша заявка принята! {% endif %}
+            {% csrf_token %}
+
+
+
+                <p><label>
+                   <input  name="field_name_1" placeholder="email" >
+                </label></p>
+                <p><label>
+                   <input type="tel" name="field_name_2" placeholder="phone" >
+               </label></p>
+                <p><label>
+                   <input  name="field_name_3" placeholder="date" >
+                </label></p>
+                <p><label>
+                    <input type="text" name="field_name_4" placeholder="description">
+                </label></p>
+                <p><label>
+                    <input type="text" name="field_name_5" placeholder="description2">
+                </label></p>
+                <p><label>
+                    <button>"Отправить"</button>
+                </label></p>
+            </form>
+</body>
+</html>

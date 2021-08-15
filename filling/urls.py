@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from filling_form.views import form_list
+from filling_form.views import zapros
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('get_form', zapros),
+    path("", form_list)]
