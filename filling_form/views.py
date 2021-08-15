@@ -13,8 +13,13 @@ def zapros(request):
     if request.method == 'POST':
         query_post = request.POST
         keys_query = list(query_post.keys())
-        values_query = list(query_post.values())
-        del keys_query[0]
+#       del keys_query[0]  вместо него напишем
+        keys_query = [
+            key for key in keys_query if key != 'csrfmiddlewaretoken'
+
+        ]
+
+
 
         file_json = open("db.json", encoding="utf8")
         list_json = json.load(file_json)

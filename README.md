@@ -16,7 +16,7 @@ Post - запроса  прошли вадиданию данных, либо о
 
 - Склонировать репозиторий
 ```
-git clone https://github.com/edick2081n/filling/tree/master/filling
+git clone https://github.com/edick2081n/filling
 ```
 
 
