@@ -13,7 +13,6 @@ def zapros(request):
     if request.method == 'POST':
         query_post = request.POST
         keys_query = list(query_post.keys())
-#       del keys_query[0]  вместо него напишем
         keys_query = [
             key for key in keys_query if key != 'csrfmiddlewaretoken'
 
@@ -37,9 +36,6 @@ def zapros(request):
         if current_template is None:
 
             return JsonResponse({'reason': "form not found"}, status=400)
-#            return HttpResponseBadRequest("ФОРМА НЕ НАЙДЕНА")
-
-#        print(current_template['name'])      ## вывод имени наиболее подходящщей формы
 
         format_fields = []
         for field_name, field_type in current_template.items():
@@ -78,40 +74,23 @@ def zapros(request):
                 pattern = r"^[-\w\.]+@([-\w]+\.)+[-\w]{2,4}$"
                 result = bool(re.findall(pattern, input_value))
                 if result is True:
-#                    print("формат данных соответствует заданному: =", "адрес электронной почты")
+
                     continue
                 else:
-#                    print("некорректный формат данных для поля email input_value = ", input_value)
+
                     format_email = (field_name, field_type)
                     format_fields.append(format_email)
 
-            # else:
-#                field_name = str(field_name)
-#                field_type = str(field_type)
-#                print({field_name + ':' + field_type})
 
         dict_bad_format = dict(format_fields)
         list_correct_form = [("name_form_template", current_template['name'])]
         dict_good_form = dict(list_correct_form)
 
-#        print(dict_bad_format)
-
-#        json_file = open('bad_format.json', 'w+', encoding='utf8')
-#        json.dump(dict_bad_format, json_file)
-#        json_file.close()
-#        return HttpResponseBadRequest("некорректный формат данных ")
-
         if not dict_bad_format :
 
-#            json_file1 = open('good_format.json', 'w+', encoding='utf8')
-#            json.dump(dict_good_form, json_file1)
-#            json_file1.close()
             return JsonResponse(dict_good_form)
         else:
             return JsonResponse(dict_bad_format, status=400)
-#         return HttpResponseBadRequest("некорректный формат данных ")
-
-
 
     return HttpResponseRedirect("/")
 

@@ -30,7 +30,7 @@ class TolokaAccountKeysTestCase(TestCase):
         self.assertEqual(response_data["name_form_template"], "Form template name 5")
 
     def test_ok_result_vyvod_informacii_o_dannyh_ne_proshedshih_validaciu_1(self):
-        response = self.client.post(self.form_url, data={        # аналог того что мы делаем в браузере
+        response = self.client.post(self.form_url, data={
             "field_name_1": 'abcmail.ru',
             "field_name_2": '+ 926 520 97 64'
         })
@@ -40,7 +40,7 @@ class TolokaAccountKeysTestCase(TestCase):
 #        self.assertEqual(response_data, 'Form template name 5')
 
     def test_ok_result_vyvod_informacii_o_dannyh_ne_proshedshih_validaciu_2 (self):
-        response = self.client.post(self.form_url, data={        # аналог того что мы делаем в браузере
+        response = self.client.post(self.form_url, data={
             "field_name_1": 'abc@mail.ru',
             "field_name_2": '+ 926 520 97 64'
         })
