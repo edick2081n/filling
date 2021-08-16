@@ -15,14 +15,10 @@ def zapros(request):
         keys_query = list(query_post.keys())
         keys_query = [
             key for key in keys_query if key != 'csrfmiddlewaretoken'
-
         ]
-
-
 
         file_json = open("db.json", encoding="utf8")
         list_json = json.load(file_json)
-
         current_template = None
         keys_count = 0
         for form_template in list_json:
@@ -49,10 +45,10 @@ def zapros(request):
                 result = bool(re.findall(pattern, input_value))
                 result1 = bool(re.findall(pattern1, input_value))
                 if result is True or result1 is True:
-#                    print("формат данных соответствует заданному: =", "дата")
+
                     continue
                 else:
-#                    print("некорректный формат данных  для поля date input_value = ", input_value )
+
                     format_date = (field_name, field_type)
                     format_fields.append(format_date)
 
@@ -62,10 +58,10 @@ def zapros(request):
                 pattern = re.compile(r"(\+7)[\s]\d{3}[\s]\d{3}[\s]\d{2}[\s]\d{2}$")
                 result = bool (re.search(pattern, input_value))
                 if result is True:
-#                    print("формат данных соответствует заданному: =", "номер телефона")
+
                     continue
                 else:
-#                    print("некорректный формат данных для поля phone input_value = ", input_value)
+
                     format_phone = (field_name, field_type)
                     format_fields.append(format_phone)
 
